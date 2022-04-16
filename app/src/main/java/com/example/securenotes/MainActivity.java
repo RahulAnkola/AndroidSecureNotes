@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.biometric.BiometricManager;
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     Button btn;
     EditText userEditText,passEditText;
     UserPassDatabase myDb;
+    TextView forgotPassword;
     private static final String SECRET_KEY = "my_super_secret_key_ho_ho_ho";
     private static final String SALT = "ssshhhhhh!!!!";
 
@@ -42,6 +44,15 @@ public class MainActivity extends AppCompatActivity {
         btn = findViewById(R.id.btn);
         userEditText = findViewById(R.id.editTextUsername);
         passEditText = findViewById(R.id.editTextPassword);
+        forgotPassword = findViewById(R.id.forgotPasswordTextView);
+
+        forgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, SecurityQuestions.class));
+                return;
+            }
+        });
 
         myDb = new UserPassDatabase(this);
         Cursor res =myDb.getAllData();
@@ -146,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
-    public static String decrypt(String strToDecrypt) {
+    public String decrypt(String strToDecrypt) {
         try {
             byte[] iv = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
             IvParameterSpec ivspec = new IvParameterSpec(iv);

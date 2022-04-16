@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SecureNotes">
         <activity
+            android:name=".SecurityQuestions"
+            android:exported="false" />
+        <activity
             android:name=".DashboardScreen"
             android:exported="false" />
         <activity
