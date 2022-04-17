@@ -46,4 +46,5 @@ public class QuestionsDatabase extends SQLiteOpenHelper {
         Cursor res = db.rawQuery("select * from "+TABLE_NAME,null);
         return res;
     }
+
 }

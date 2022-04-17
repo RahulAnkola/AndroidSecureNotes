@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         Cursor res =myDb.getAllData();
 
         if(res.getCount()==0){  //FIRST TIME LOGIN
+            forgotPassword.setVisibility(View.INVISIBLE);
             setUserNPass();
         }// if condition
 
@@ -130,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
 
                 myDb.insertData(AESUser,AESPass);
 
-                startActivity(new Intent(MainActivity.this, MainActivity.class));
+                startActivity(new Intent(MainActivity.this, SecurityQuestions.class));
             }
         });
     }
