@@ -12,6 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SecureNotes">
         <activity
+            android:name=".AddNoteActivity"
+            android:label="Add note"
+            android:parentActivityName=".DashboardScreen"
+            android:exported="false" />
+        <activity
+            android:name=".UpdateNoteActivity"
+            android:label="Update note"
+            android:parentActivityName=".DashboardScreen"
+            android:exported="false" />
+        <activity
             android:name=".SecurityQuestions"
             android:exported="false" />
         <activity

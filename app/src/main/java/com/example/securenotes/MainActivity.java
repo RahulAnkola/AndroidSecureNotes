@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
     EditText userEditText,passEditText;
     UserPassDatabase myDb;
     TextView forgotPassword;
-    private static final String SECRET_KEY = "my_super_secret_key_ho_ho_ho";
-    private static final String SALT = "ssshhhhhh!!!!";
+    private static final String SECRET_KEY = "vishnu_priya_is_a_great_teacher";
+    private static final String SALT = "androidsecurity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,8 +60,7 @@ public class MainActivity extends AppCompatActivity {
         if(res.getCount()==0){  //FIRST TIME LOGIN
             forgotPassword.setVisibility(View.INVISIBLE);
             setUserNPass();
-        }// if condition
-
+        }
         //AFTER SETTING THE USER AND PASS
         else{
             authenticate();
